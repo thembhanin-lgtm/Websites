@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Free Shop & Tracking</title>
+    <style>
+        body { font-family: sans-serif; max-width: 400px; margin: 50px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        input, button { width: 100%; padding: 12px; margin: 8px 0; box-sizing: border-box; }
+        button { background: #0078d4; color: white; border: none; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>🛒 Quick Checkout Demo</h2>
+    <button onclick="alert('Order Placed! Your Simulated tracking ID is: TRK-99821')">Simulate Buy ($10.00)</button>
+
+    <h2>📦 Track Your Parcel</h2>
+    <input type="text" id="trackId" placeholder="Enter Tracking ID (e.g., TRK-99821)">
+    <button onclick="checkParcel()">Track Order</button>
+
+    <p id="result" style="font-weight: bold; color: green; margin-top: 15px;"></p>
+
+    <script>
+        function checkParcel() {
+            const id = document.getElementById('trackId').value;
+            if(id === 'TRK-99821') {
+                document.getElementById('result').innerText = "Status: Shipped via Azure Logistics!";
+            } else {
+                document.getElementById('result').innerText = "Tracking number not found. Try TRK-99821";
+            }
+        }
+    </script>
+</body>
+</html>
